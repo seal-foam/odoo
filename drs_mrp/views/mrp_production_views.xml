@@ -1,0 +1,13 @@
+<odoo>
+    <record id="mrp_production_form_view_effective_date" model="ir.ui.view">
+        <field name="name">mrp.production.form.effective_date</field>
+        <field name="model">mrp.production</field>
+        <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_planned_start']/.." position="after">
+                <field name="effective_date" readonly="1"
+                       attrs="{'invisible': [('state', 'in', ['draft', 'cancel'])]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
