@@ -11,6 +11,11 @@
                 <br/>
                 <span t-field="o.date_finished"/>
             </div>
+            <div class="col-3" t-if="o.effective_date">
+                <strong>Fecha de transferencia:</strong>
+                <br/>
+                <span t-field="o.effective_date"/>
+            </div>
         </xpath>
     </template>
 </odoo>

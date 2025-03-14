@@ -19,6 +19,7 @@
     'depends': ['mrp'],
 
     'data': [
-        'views/mrp_production_report.xml'
+        'views/mrp_production_report.xml',
+        'views/mrp_production_views.xml',
     ],
 }
