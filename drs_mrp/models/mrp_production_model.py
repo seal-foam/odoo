@@ -8,6 +8,7 @@ class Production(models.Model):
         string="Fecha de transferencia",
         compute="_compute_effective_date"
     )
+    suaje_id = fields.Many2one(comodel_name="product.template", related="bom_id.x_suaje", string="Suaje")
 
     @api.depends("location_src_id", "picking_ids")
     def _compute_effective_date(self):
