@@ -8,6 +8,9 @@
                 <field name="effective_date" readonly="1"
                        attrs="{'invisible': [('state', 'in', ['draft', 'cancel'])]}"/>
             </xpath>
+            <xpath expr="//field[@name='bom_id']/.." position="after">
+                <field name="suaje_id" readonly="1"/>
+            </xpath>
         </field>
     </record>
 </odoo>
