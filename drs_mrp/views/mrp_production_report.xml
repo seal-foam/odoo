@@ -17,5 +17,119 @@
                 <span t-field="o.effective_date"/>
             </div>
         </xpath>
+        <xpath expr="//t[@t-call='mrp.report_mrp_production_components']" position="after">
+            <t t-call="drs_mrp.mrp_empty_tables"/>
+        </xpath>
+    </template>
+    <template id="mrp_empty_tables">
+        <div class="fw-bold mt-3 mb-1">
+            REGISTRO DE PRODUCCION ADHESIVADO O CORTE DE BANDAS
+        </div>
+        <table class="table table-bordered table-sm" style="font-size:11px; border:1px solid #000;">
+            <thead>
+                <tr style="background-color:#9bb6d3;">
+                    <th rowspan="2" class="text-center align-middle">FECHA</th>
+                    <th rowspan="2" class="text-center align-middle">HR INICIO</th>
+                    <th rowspan="2" class="text-center align-middle">HR TERMINO</th>
+                    <th rowspan="2" class="text-center align-middle">AJUSTE INICIAL<br/>(minutos)
+                    </th>
+                    <th rowspan="2" class="text-center align-middle">AJUSTE INICIAL<br/>(metros)
+                    </th>
+                    <th colspan="2" class="text-center align-middle">CANT PRODUCIDA EPDM</th>
+                    <th class="text-center align-middle">CANT PRODUCIDA ADHESIVO</th>
+                    <th rowspan="2" class="text-center align-middle">CANT PRODUCIDA NOK</th>
+                    <th rowspan="2" class="text-center align-middle">TIEMPO DE PAROS<br/>(minutos)
+                    </th>
+                    <th rowspan="2" class="text-center align-middle">MOTIVO(s) DE PARO</th>
+                </tr>
+                <tr style="background-color:#9bb6d3;">
+                    <th class="text-center">ROLLOS</th>
+                    <th class="text-center">M2</th>
+                    <th class="text-center">METROS</th>
+                </tr>
+            </thead>
+            <tbody>
+                <t t-foreach="range(6)" t-as="i">
+                    <tr style="height:26px;">
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                    </tr>
+                </t>
+            </tbody>
+        </table>
+        <div class="fw-bold mt-4 mb-1">
+            REGISTRO DE PRODUCCION SUAJADO / MANUFACTURA
+        </div>
+        <table class="table table-bordered table-sm" style="font-size:11px; border:1px solid #000;">
+            <thead style="background-color:#9bb6d3;">
+                <tr>
+                    <th class="text-center">FECHA</th>
+                    <th class="text-center">HR INICIO</th>
+                    <th class="text-center">HR TERMINO</th>
+                    <th class="text-center">CANT PRODUCIDA<br/>(unidades)
+                    </th>
+                    <th class="text-center">CANT PRODUCIDA NOK</th>
+                    <th class="text-center">SET UP<br/>(minutos)
+                    </th>
+                    <th class="text-center">SET UP<br/>(Unidades)
+                    </th>
+                    <th class="text-center">TIEMPO DE PAROS<br/>(minutos)
+                    </th>
+                    <th class="text-center">MOTIVO(s) DE PARO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <t t-foreach="range(6)" t-as="i">
+                    <tr style="height:26px;">
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                    </tr>
+                </t>
+            </tbody>
+        </table>
+        <div class="fw-bold mt-4 mb-1">
+            REGISTRO DE PRODUCCION DESTROQUELADO / OPERACIONES DE MANUFACTURA
+        </div>
+        <table class="table table-bordered table-sm" style="font-size:11px; border:1px solid #000;">
+            <thead style="background-color:#9bb6d3;">
+                <tr>
+                    <th class="text-center">FECHA SALIDA</th>
+                    <th class="text-center">FECHA DE ENTRADA</th>
+                    <th class="text-center">PROCESO</th>
+                    <th class="text-center">CANT PRODUCIDA<br/>(unidades)
+                    </th>
+                    <th class="text-center">CANT PRODUCIDA NOK</th>
+                    <th class="text-center">OBSERVACIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <t t-foreach="range(6)" t-as="i">
+                    <tr style="height:26px;">
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                        <td/>
+                    </tr>
+                </t>
+            </tbody>
+        </table>
     </template>
 </odoo>
