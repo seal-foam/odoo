@@ -101,7 +101,7 @@
                 </tr>
             </thead>
             <tbody>
-                <t t-foreach="range(6)" t-as="i">
+                <t t-foreach="range(5)" t-as="i">
                     <tr style="height:28px;">
                         <td/>
                         <td/>
@@ -182,7 +182,7 @@
                 </tr>
             </thead>
             <tbody>
-                <t t-foreach="range(6)" t-as="i">
+                <t t-foreach="range(5)" t-as="i">
                     <tr style="height:30px;">
                         <td/>
                         <td/>
