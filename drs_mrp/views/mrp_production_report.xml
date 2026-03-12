@@ -18,39 +18,84 @@
             </div>
         </xpath>
         <xpath expr="//t[@t-call='mrp.report_mrp_production_components']" position="after">
+            <div style="page-break-before:always;"/>
             <t t-call="drs_mrp.mrp_empty_tables"/>
         </xpath>
     </template>
     <template id="mrp_empty_tables">
-        <div class="fw-bold mt-3 mb-1">
-            REGISTRO DE PRODUCCION ADHESIVADO O CORTE DE BANDAS
-        </div>
-        <table class="table table-bordered table-sm" style="font-size:11px; border:1px solid #000;">
-            <thead>
-                <tr style="background-color:#9bb6d3;">
-                    <th rowspan="2" class="text-center align-middle">FECHA</th>
-                    <th rowspan="2" class="text-center align-middle">HR INICIO</th>
-                    <th rowspan="2" class="text-center align-middle">HR TERMINO</th>
-                    <th rowspan="2" class="text-center align-middle">AJUSTE INICIAL<br/>(minutos)
+        <table class="table table-borderless mb-1" style="font-size:11px;">
+            <tr>
+                <td class="fw-bold">
+                    PROCESO DE ADHESIVADO Y /O CORTE
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>
+                    <strong>Número de operador:</strong>
+                </td>
+
+                <td>
+                    <strong>Número de auxiliar de operador:</strong>
+                </td>
+
+                <td>
+                    <strong>Ancho de bandas:</strong>
+                    <br/>
+                    Cantidad de bandas:
+                </td>
+
+                <td>
+                    <strong>Cantidad y ancho de bandas sobrantes:</strong>
+                </td>
+            </tr>
+        </table>
+        <table class="table table-sm table-bordered text-center align-middle"
+               style="width:100%; table-layout:fixed; font-size:10px;">
+            <thead class="table-light">
+                <tr>
+                    <th style="width:6%;">Fecha</th>
+                    <th style="width:8%;" class="text-wrap">
+                        Hora de inicio ajuste de máquina
                     </th>
-                    <th rowspan="2" class="text-center align-middle">AJUSTE INICIAL<br/>(metros)
+                    <th style="width:8%;" class="text-wrap">
+                        Hora de termino ajuste de máquina
                     </th>
-                    <th colspan="2" class="text-center align-middle">CANT PRODUCIDA EPDM</th>
-                    <th class="text-center align-middle">CANT PRODUCIDA ADHESIVO</th>
-                    <th rowspan="2" class="text-center align-middle">CANT PRODUCIDA NOK</th>
-                    <th rowspan="2" class="text-center align-middle">TIEMPO DE PAROS<br/>(minutos)
+                    <th style="width:8%;" class="text-wrap">
+                        Merma de ajuste de máquina (centímetros)
                     </th>
-                    <th rowspan="2" class="text-center align-middle">MOTIVO(s) DE PARO</th>
-                </tr>
-                <tr style="background-color:#9bb6d3;">
-                    <th class="text-center">ROLLOS</th>
-                    <th class="text-center">M2</th>
-                    <th class="text-center">METROS</th>
+                    <th style="width:7%;" class="text-wrap">
+                        Hora inicio de corrida
+                    </th>
+                    <th style="width:7%;" class="text-wrap">
+                        Hora termino de corrida
+                    </th>
+                    <th style="width:7%;" class="text-wrap">
+                        Cantidad producida rollos
+                    </th>
+                    <th style="width:10%;" class="text-wrap">
+                        Cantidad producida metros lineales
+                    </th>
+                    <th style="width:7%;" class="text-wrap">
+                        Cantidad de Scrap (centímetros)
+                    </th>
+                    <th style="width:10%;" class="text-wrap">
+                        Descripción del Scrap
+                    </th>
+                    <th style="width:10%;" class="text-wrap">
+                        Tiempo de paro (minutos)
+                    </th>
+                    <th style="width:12%;" class="text-wrap">
+                        Motivo de paro
+                    </th>
                 </tr>
             </thead>
             <tbody>
                 <t t-foreach="range(6)" t-as="i">
-                    <tr style="height:26px;">
+                    <tr style="height:28px;">
                         <td/>
                         <td/>
                         <td/>
@@ -60,36 +105,78 @@
                         <td/>
                         <td/>
                         <td/>
+                        <td class="text-start"/>
                         <td/>
-                        <td/>
+                        <td class="text-start"/>
                     </tr>
                 </t>
             </tbody>
         </table>
-        <div class="fw-bold mt-4 mb-1">
-            REGISTRO DE PRODUCCION SUAJADO / MANUFACTURA
+        <div style="margin-top:18px; font-size:10px;">
+            <strong>
+                Motivo del porqué se fabricó una cantidad diferente a la especificada en MO:
+            </strong>
+            <div style="border-bottom:1px solid #000; height:22px;"/>
+            <div style="border-bottom:1px solid #000; height:22px;"/>
         </div>
-        <table class="table table-bordered table-sm" style="font-size:11px; border:1px solid #000;">
-            <thead style="background-color:#9bb6d3;">
+        <table class="table table-borderless mb-1" style="width:100%; font-size:11px;">
+            <tr>
+                <td colspan="3" class="fw-bold">
+                    PROCESO DE SUAJADO/MANUFACTURA
+                </td>
+            </tr>
+            <tr>
+                <td style="width:33%">
+                    <strong>Número de operador:</strong>
+                </td>
+                <td style="width:33%">
+                    <strong>Número de auxiliar de operador:</strong>
+                </td>
+                <td style="width:34%">
+                    <strong>No. Cavidades suaje:</strong>
+                </td>
+            </tr>
+        </table>
+        <table class="table table-sm table-bordered text-center align-middle"
+               style="width:100%; table-layout:fixed; font-size:10px;">
+            <thead class="table-light">
                 <tr>
-                    <th class="text-center">FECHA</th>
-                    <th class="text-center">HR INICIO</th>
-                    <th class="text-center">HR TERMINO</th>
-                    <th class="text-center">CANT PRODUCIDA<br/>(unidades)
+                    <th style="width:6%">Fecha</th>
+                    <th style="width:8%" class="text-wrap">
+                        Hora de inicio ajuste de máquina
                     </th>
-                    <th class="text-center">CANT PRODUCIDA NOK</th>
-                    <th class="text-center">SET UP<br/>(minutos)
+                    <th style="width:8%" class="text-wrap">
+                        Hora de termino ajuste de máquina
                     </th>
-                    <th class="text-center">SET UP<br/>(Unidades)
+                    <th style="width:9%" class="text-wrap">
+                        Merma de ajuste de máquina (piezas)
                     </th>
-                    <th class="text-center">TIEMPO DE PAROS<br/>(minutos)
+                    <th style="width:6%" class="text-wrap">
+                        Hora inicio de corrida
                     </th>
-                    <th class="text-center">MOTIVO(s) DE PARO</th>
+                    <th style="width:6%" class="text-wrap">
+                        Hora termino de corrida
+                    </th>
+                    <th style="width:8%" class="text-wrap">
+                        Cantidad producida (piezas)
+                    </th>
+                    <th style="width:8%" class="text-wrap">
+                        Cantidad de Scrap (piezas)
+                    </th>
+                    <th style="width:20%" class="text-wrap">
+                        Descripción del Scrap
+                    </th>
+                    <th style="width:6%" class="text-wrap">
+                        Tiempo de paro (minutos)
+                    </th>
+                    <th style="width:15%" class="text-wrap">
+                        Motivo de paro
+                    </th>
                 </tr>
             </thead>
             <tbody>
                 <t t-foreach="range(6)" t-as="i">
-                    <tr style="height:26px;">
+                    <tr style="height:30px;">
                         <td/>
                         <td/>
                         <td/>
@@ -98,35 +185,61 @@
                         <td/>
                         <td/>
                         <td/>
+                        <td class="text-start"/>
                         <td/>
+                        <td class="text-start"/>
                     </tr>
                 </t>
             </tbody>
         </table>
-        <div class="fw-bold mt-4 mb-1">
-            REGISTRO DE PRODUCCION DESTROQUELADO / OPERACIONES DE MANUFACTURA
+        <div style="margin-top:18px; font-size:10px;">
+            <strong>
+                Motivo del porqué se fabricó una cantidad diferente a la especificada en MO:
+            </strong>
+            <div style="border-bottom:1px solid #000; height:22px;"/>
+            <div style="border-bottom:1px solid #000; height:22px;"/>
         </div>
-        <table class="table table-bordered table-sm" style="font-size:11px; border:1px solid #000;">
-            <thead style="background-color:#9bb6d3;">
+        <table class="table table-borderless mb-1" style="width:100%; font-size:11px;">
+            <tr>
+                <td class="fw-bold">
+                    PROCESO DE DESTROQUELADO
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <strong>Número de operador(es):</strong>
+                </td>
+            </tr>
+        </table>
+        <table class="table table-sm table-bordered text-center align-middle"
+               style="width:100%; table-layout:fixed; font-size:10px;">
+            <thead class="table-light">
                 <tr>
-                    <th class="text-center">FECHA SALIDA</th>
-                    <th class="text-center">FECHA DE ENTRADA</th>
-                    <th class="text-center">PROCESO</th>
-                    <th class="text-center">CANT PRODUCIDA<br/>(unidades)
+                    <th style="width:15%" class="text-wrap">
+                        Fecha de recibo
                     </th>
-                    <th class="text-center">CANT PRODUCIDA NOK</th>
-                    <th class="text-center">OBSERVACIONES</th>
+                    <th style="width:15%" class="text-wrap">
+                        Fecha de entrega
+                    </th>
+                    <th style="width:15%" class="text-wrap">
+                        Cantidad producida (piezas)
+                    </th>
+                    <th style="width:15%" class="text-wrap">
+                        Cantidad SCRAP (piezas)
+                    </th>
+                    <th style="width:40%" class="text-wrap">
+                        Descripción del SCRAP
+                    </th>
                 </tr>
             </thead>
             <tbody>
-                <t t-foreach="range(6)" t-as="i">
-                    <tr style="height:26px;">
+                <t t-foreach="range(5)" t-as="i">
+                    <tr style="height:30px; page-break-inside:avoid;">
                         <td/>
                         <td/>
                         <td/>
                         <td/>
-                        <td/>
-                        <td/>
+                        <td class="text-start"/>
                     </tr>
                 </t>
             </tbody>
