@@ -1,6 +1,6 @@
 {
     "name": "DRS - Extensión Mantenimiento",
-    "version": "16.0.1",
+    "version": "19.0.1.0.0",
     "summary": """
         - Agregar datos a peticiones de mantenimiento
     """,

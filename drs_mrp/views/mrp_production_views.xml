@@ -4,9 +4,8 @@
         <field name="model">mrp.production</field>
         <field name="inherit_id" ref="mrp.mrp_production_form_view"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='date_planned_start']/.." position="after">
-                <field name="effective_date" readonly="1"
-                       attrs="{'invisible': [('state', 'in', ['draft', 'cancel'])]}"/>
+            <xpath expr="//field[@name='date_start']/.." position="after">
+                <field name="effective_date" readonly="1" invisible="state in ['draft', 'cancel']"/>
             </xpath>
             <xpath expr="//field[@name='bom_id']/.." position="after">
                 <field name="suaje_id" readonly="1"/>
