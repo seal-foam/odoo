@@ -1,5 +1,12 @@
 <odoo>
     <template id="report_mrporder" inherit_id="mrp.report_mrporder">
+        <xpath expr="//span[@t-field='o.product_qty']/.." position="after">
+            <div class="col-3 mx-1">
+                <strong>Suaje:</strong>
+                <br/>
+                <span t-field="o.suaje_id"/>
+            </div>
+        </xpath>
         <xpath expr="//span[@t-field='o.date_deadline']/.." position="before">
             <div class="col-3">
                 <strong>Fecha de creación:</strong>
