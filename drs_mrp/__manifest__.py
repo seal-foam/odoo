@@ -13,7 +13,7 @@
     'website': "https://www.drasi.odoo.com",
 
     'category': 'MRP',
-    'version': '19.0.1.0.0',
+    'version': '19.0.1.0.1',
 
     'depends': ['mrp'],
 
