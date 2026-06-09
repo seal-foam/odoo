@@ -19,6 +19,13 @@ class ProductTemplate(models.Model):
         default_code = vals.get("default_code", False)
         if default_code:
             for tmpl in self:
-                if self.search_count([("default_code", "=", default_code), ("id", "!=", tmpl.id)]) > 0:
-                    raise UserError(f"La referencia interna '{default_code}' ya existe.")
+                if (
+                    self.search_count(
+                        [("default_code", "=", default_code), ("id", "!=", tmpl.id)]
+                    )
+                    > 0
+                ):
+                    raise UserError(
+                        f"La referencia interna '{default_code}' ya existe."
+                    )
         return super().write(vals)

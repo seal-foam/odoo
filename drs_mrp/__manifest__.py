@@ -1,24 +1,18 @@
 {
-    'name': "Drasi | drs_mrp",
-
-    'summary': """
+    "name": "Drasi | drs_mrp",
+    "summary": """
         MRP customizations.
     """,
-
-    'description': """
+    "description": """
         This module add customizations to MRP workflow.
     """,
-
-    'author': "Drasi Consulting",
-    'website': "https://www.drasi.odoo.com",
-
-    'category': 'MRP',
-    'version': '19.0.1.0.1',
-
-    'depends': ['mrp'],
-
-    'data': [
-        'views/mrp_production_report.xml',
-        'views/mrp_production_views.xml',
+    "author": "Drasi Consulting",
+    "website": "https://www.drasi.odoo.com",
+    "category": "MRP",
+    "version": "19.0.1.0.1",
+    "depends": ["mrp"],
+    "data": [
+        "views/mrp_production_report.xml",
+        "views/mrp_production_views.xml",
     ],
 }
