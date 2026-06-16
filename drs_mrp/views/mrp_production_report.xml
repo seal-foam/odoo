@@ -1,12 +1,5 @@
 <odoo>
     <template id="report_mrporder" inherit_id="mrp.report_mrporder">
-        <xpath expr="//span[@t-field='o.product_qty']/.." position="after">
-            <div class="col-3 mx-1">
-                <strong>Suaje:</strong>
-                <br/>
-                <span t-field="o.suaje_id"/>
-            </div>
-        </xpath>
         <xpath expr="//span[@t-field='o.date_deadline']/.." position="before">
             <div class="col-3">
                 <strong>Fecha de creación:</strong>
@@ -27,6 +20,20 @@
         <xpath expr="//t[@t-call='mrp.report_mrp_production_components']" position="after">
             <div style="page-break-before:always;"/>
             <t t-call="drs_mrp.mrp_empty_tables"/>
+        </xpath>
+        <xpath expr="//span[@t-field='o.product_id']/../.." position="after">
+            <div class="row mt32 mb32">
+                <div class="col-3">
+                    <strong>Lote:</strong>
+                    <br/>
+                    <span t-field="o.lot_producing_ids"/>
+                </div>
+                <div class="col-3 mx-1">
+                    <strong>Suaje:</strong>
+                    <br/>
+                    <span t-field="o.suaje_id"/>
+                </div>
+            </div>
         </xpath>
     </template>
     <template id="mrp_empty_tables">
