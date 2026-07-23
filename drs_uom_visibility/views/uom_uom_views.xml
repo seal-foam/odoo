@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="uom_uom_no_access_form_view" model="ir.ui.view">
+        <field name="name">uom.uom.no.access.form</field>
+        <field name="model">uom.uom</field>
+        <field name="mode">primary</field>
+        <field name="priority" eval="99"/>
+        <field name="arch" type="xml">
+            <form string="Units of Measure" create="0" edit="0" delete="0">
+                <sheet>
+                    <div class="alert alert-warning" role="alert">
+                        No tiene permisos para ver las unidades de medidas.
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</odoo>
