@@ -4,12 +4,13 @@
 @project sealandfoam
 @name: maintenance_request_extended
 """
-from odoo import api, fields, models
+from odoo import fields, models
 
 
 class MaintenanceRequestExtended(models.Model):
     _inherit = 'maintenance.request'
 
     maintenance_type = fields.Selection(
-        selection_add=[('predictive', "Predictivo")]
+        selection_add=[('predictive', "Predictivo"), ('general', "General")],
+        ondelete={'general': 'set default'},
     )
